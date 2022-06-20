@@ -4,13 +4,13 @@ import {ContactListItemContainer} from './ContactListItemStyles';
 import PropTypes from 'prop-types';
 
 
-export default function ContactListItem({ contactName, contactNumber, del }) {
+export default function ContactListItem({ contactName, contactNumber, delContact }) {
     return (
         <ContactListItemContainer>
             <p className="contactListItemText">
                 {contactName}: {contactNumber}
             </p>
-            <ButtonListItem type="button" onClick={del}>
+            <ButtonListItem type="button" onClick={delContact}>
             Delete
             </ButtonListItem>
             </ContactListItemContainer>
