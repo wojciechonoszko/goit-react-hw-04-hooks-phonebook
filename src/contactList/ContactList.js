@@ -5,30 +5,57 @@ import ContactListItem from '../components/contactListItem/ContactListItem';
 import { ContactListCnt } from '../components/contactListItem/ContactListItemStyles';
 
 
-const ContactList = ({contacts, deleteContact}) => {
+export default function ContactList({ data, deleteButton }) {
   return (
     <ContactListCnt>
-      {contacts.map(contact => (
+      {data.map(({ id, name, number }) => (
         <ContactListItem
-          name={contact.name}
-          number={contact.number}
-          key={uuid()}
-          deleteContact={() => deleteContact(contact.id)}
-        />
+        contactName={name}
+        contactNumber={number}
+        key={id}
+        deleteContact={() => deleteButton(id)}
+      />
       ))}
+        
     </ContactListCnt>
   );
 };
 
 ContactList.propTypes = {
-  deleteContact: PropTypes.func.isRequired,
-  contacts: PropTypes.arrayOf(
+  data: PropTypes.arrayOf(
     PropTypes.shape({
+      id: PropTypes.string.isRequired,
       name: PropTypes.string.isRequired,
-      number: PropTypes.string.isRequired
+      number: PropTypes.string.isRequired,
     })
-  )
+  ),
+  deleteButton: PropTypes.func,
 };
 
+// const ContactList = ({contacts, deleteContact}) => {
+//   return (
+//     <ContactListCnt>
+//       {contacts.map(contact => (
+//         <ContactListItem
+//           name={contact.name}
+//           number={contact.number}
+//           key={uuid()}
+//           deleteContact={() => deleteContact(contact.id)}
+//         />
+//       ))}
+//     </ContactListCnt>
+//   );
+// };
 
-export default ContactList;
+// ContactList.propTypes = {
+//   deleteContact: PropTypes.func.isRequired,
+//   contacts: PropTypes.arrayOf(
+//     PropTypes.shape({
+//       name: PropTypes.string.isRequired,
+//       number: PropTypes.string.isRequired
+//     })
+//   )
+// };
+
+
+// export default ContactList;
