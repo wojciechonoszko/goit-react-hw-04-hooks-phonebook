@@ -19,6 +19,7 @@ export default function App() {
     const [filter, setFilter] = useState("");
 
     useEffect(() => {
+        console.log("useEffect");
         const contact = localStorage.getItem("contact");
         const contactsParsed = JSON.parse(contact);
         if (contactsParsed) {
