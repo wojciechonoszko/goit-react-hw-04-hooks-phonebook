@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import {v4 as uuid} from 'uuid';
+//import {v4 as uuid} from 'uuid';
 import ContactListItem from '../components/contactListItem/ContactListItem';
 import { ContactListCnt } from '../components/contactListItem/ContactListItemStyles';
 

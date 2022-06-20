@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React from 'react';
 
 import { useState, useEffect } from "react";
 import ContactForm from './components/contactForm/ContactForm';
@@ -19,7 +19,6 @@ export default function App() {
     const [filter, setFilter] = useState("");
 
     useEffect(() => {
-        console.log("use");
         const contact = localStorage.getItem("contact");
         const contactsParsed = JSON.parse(contact);
         if (contactsParsed) {
@@ -57,11 +56,12 @@ export default function App() {
     contact.name.toLowerCase().includes(filter.toLowerCase())
     );
 
-    const deleteButton = (contactId) => {
+
+    const deleteButton = (conId) => {
         setContacts((prevState) =>
-            prevState.filter((contact) => contact.id !== contactId)
+          prevState.filter((contact) => contact.id !== conId)
         );
-    };
+      };
 
         return (
             <div>

@@ -1,7 +1,7 @@
 import React from 'react';
 
 import { useState } from "react";
-import PropTypes from 'prop-types';
+//import PropTypes from 'prop-types';
 import{
     ButtonContainer,
     ContactFormContainer,
@@ -70,9 +70,9 @@ export default function ContactForm({ onSubmit }) {
     );
 }
 
-ContactForm.propTypes = {
-    addNewContact: PropTypes.func.isRequired
-};
+// ContactForm.propTypes = {
+//     addNewContact: PropTypes.func.isRequired
+// };
 
 
 // class ContactForm extends Component {
